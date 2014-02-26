@@ -22,12 +22,6 @@
           "page": "favorites",
           "title": "Favorites",
           "accessibilityLabel": "favorites"
-        },
-        {
-          "name": "Hello",
-          "page": "hello",
-          "title": "Hello World",
-          "accessibilityLabel": "hello"
         }
       ]
     ]
