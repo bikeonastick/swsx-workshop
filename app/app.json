@@ -6,10 +6,16 @@
     "args": [
       [
         {
-            "name": "About",
-            "page": "about",
-            "title": "About",
-            "accessibilityLabel": "about"
+          "name": "Upcoming",
+          "page": "upcoming",
+          "iconText": "U",
+          "accessibilityLabel": "upcoming"
+        },
+        {
+          "name": "About",
+          "page": "about",
+          "title": "About",
+          "accessibilityLabel": "about"
         },
         {
           "name": "Hello",

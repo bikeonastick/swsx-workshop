@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Upcoming</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+
+    <script type="text/javascript" src="vendor/cordova.js"></script>
+    <script type="text/javascript" src="vendor/page.js"></script>
+    <script type="text/javascript" src="vendor/liger.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/underscore.js"></script>
+    <script type="text/javascript" src="assets/js/pages/upcoming.js"></script>
+</head>
+<body>
+
+    <script type="text/x-underscore" id='upcomingTemplate'>
+        <ul class="nav-list">
+        <% _.each(shows, function(show) { %>
+            <li class="show-details-link">
+                <a><span class="lead"><%=show.title%></span></a><br />
+                <%=show.subtitle%>
+            </li>
+        <% }); %>
+        </ul>
+    </script>
+
+    <div class="container" id="page-content">
+
+    </div>
+
+	<script>
+        PAGE.initialize("upcoming");
+    </script>
+</body>
+</html>
