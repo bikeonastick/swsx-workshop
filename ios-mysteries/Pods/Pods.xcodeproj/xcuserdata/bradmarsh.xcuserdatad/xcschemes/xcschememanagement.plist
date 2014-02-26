@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-ios-mysteries-Cordova.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ios-mysteries-Liger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ios-mysteries-UIColor-HTMLColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ios-mysteries.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>338B5C8298EC4662AD0E0BF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5D4F9CAC83740D597C63167</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDF168C823A44CB2B8F6E1B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FEFC125F78A84B648CAC369D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+{
+  "appFormatVersion": 5,
+  "rootPage": {
+    "page": "appMenu",
+    "accessibilityLabel": "menu",
+    "args": [
+      [
+        {
+          "name": "Hello",
+          "page": "hello",
+          "title": "Hello World",
+          "accessibilityLabel": "hello"
+        }
+      ]
+    ]
+  },
+  "appearance": {
+    "iOS": {
+      "barColor": "",
+      "barText": "",
+      "webBackground": "",
+      "menuBackground": "",
+      "menu1Text": "",
+      "menu2Text": "",
+      "menuSelected": ""
+    },
+    "iOS7": {
+      "statusBar": "",
+      "statusBarDialog": "",
+      "barColor": "",
+      "barTint": "",
+      "tint": "",
+      "barText": "",
+      "webBackground": "",
+      "menuBackground": "",
+      "menu1Text": "",
+      "menu2Text": "",
+      "menuSelected": ""
+    }
+  },
+  "pagesWithToolbars": []
+}

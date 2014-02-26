@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:cdv = "http://cordova.apache.org/ns/1.0"
+        id        = "io.cordova.yourfancyapp"
+        version   = "1.0.0">
+    <name>Your fancy app</name>
+
+    <description>
+        Description of your fancy app
+    </description>
+
+    <author href="http://yourfancycompany.com" email="">
+        You
+    </author>
+
+    <access origin="*" />
+    <preference name="fullscreen" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="UIWebViewBounce" value="true" />
+    <preference name="TopActivityIndicator" value="gray" />
+    <preference name="EnableLocation" value="false" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value="2" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="BackupWebStorage" value="cloud" />
+
+    <plugins>
+        <feature name="Liger">
+            <param name="ios-package" value="LGRLiger" />
+            <param name="android-package" value="com.reachlocal.liger.LigerPlugin" />
+        </feature>
+    </plugins>
+
+</widget>

@@ -1,0 +1,22 @@
+PODS:
+  - Cordova (3.1.0):
+    - Cordova/Base
+  - Cordova/Base (3.1.0)
+  - Liger (0.0.8):
+    - Cordova (= 3.1.0)
+    - UIColor-HTMLColors (= 1.0.0)
+  - UIColor-HTMLColors (1.0.0)
+
+DEPENDENCIES:
+  - Liger (from `https://github.com/reachlocal/liger-ios`)
+
+EXTERNAL SOURCES:
+  Liger:
+    :git: https://github.com/reachlocal/liger-ios
+
+SPEC CHECKSUMS:
+  Cordova: d228f72b7c7e5823af9a8b6645f868daf81e6398
+  Liger: 06f4c3ca1e4de06a5ad8c20c0e55d7a82cbdb0de
+  UIColor-HTMLColors: da4cd2f18102ace67736392ffd15d8a145e5a31f
+
+COCOAPODS: 0.29.0
