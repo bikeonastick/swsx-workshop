@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>About</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+
+    <script type="text/javascript" src="vendor/cordova.js"></script>
+    <script type="text/javascript" src="vendor/page.js"></script>
+    <script type="text/javascript" src="vendor/liger.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/underscore.js"></script>
+    <script type="text/javascript" src="assets/js/pages/about.js"></script>
+
+</head>
+<body>
+
+    <script type="text/x-underscore" id='aboutTemplate'>
+        <ul class="nav-list">
+            <li>This is not written by or endorsed by the BBC in any way.</li>
+            <li>This is written as an example of how Liger can be used and is not intended to be built and distributed as an application in any app store by any party.</li>
+            <li>You may use any Liger code from this example in your commercial applications, but to interact with BBC services in your commercial applications, you must contact the BBC for permission and it is up to you to ensure you comply with http://www.bbc.co.uk/terms/business.shtml</li>
+        </ul>
+    </script>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-12" id="page-content">
+
+            </div>
+        </div>
+    </div>
+	<script>
+        PAGE.initialize("about");
+    </script>
+</body>
+</html>
