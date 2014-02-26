@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Favorites</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+
+    <script type="text/javascript" src="vendor/cordova.js"></script>
+    <script type="text/javascript" src="vendor/page.js"></script>
+    <script type="text/javascript" src="vendor/liger.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/underscore.js"></script>
+    <script type="text/javascript" src="assets/js/common/common.js"></script>
+    <script type="text/javascript" src="assets/js/pages/favorites.js"></script>
+
+</head>
+<body>
+
+    <script type="text/x-underscore" id='favoritesTemplate'>
+        <ul class="nav-list">
+        <% _.each(shows, function(show) { %>
+            <li class='show-details-link' data-series-id="<%= _.keys(show)[0] %>">
+                <a class="lead"><%= show[ _.keys(show)[0] ] %></a>
+            </li>
+        <% }); %>
+        </ul>
+    </script>
+
+    <script type="text/x-underscore" id='noFavoritesTemplate'>
+        <p class="lead">You have not selected any favorites yet.</p>
+    </script>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-12" id="page-content">
+
+            </div>
+        </div>
+    </div>
+
+	<script>
+        PAGE.initialize("favorites");
+    </script>
+</body>
+</html>
