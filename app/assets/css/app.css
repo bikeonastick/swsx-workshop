@@ -1,0 +1,22 @@
+.nav-list{
+	list-style-type: none;
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+}
+
+.nav-list li{
+	border-bottom:solid 1px #eee;
+	padding:10px;
+}
+
+.top-image{
+	margin-top:15px;
+}
+
+button{
+	width:100%;
+}
+
+.lead{
+	font-weight: 400;
+}
