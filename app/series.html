@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Series</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+
+    <script type="text/javascript" src="vendor/cordova.js"></script>
+    <script type="text/javascript" src="vendor/page.js"></script>
+    <script type="text/javascript" src="vendor/liger.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/underscore.js"></script>
+    <script type="text/javascript" src="assets/js/common/common.js"></script>
+    <script type="text/javascript" src="assets/js/pages/series.js"></script>
+
+</head>
+<body>
+
+    <script type="text/x-underscore" id='seriesDetailsTemplate'>
+        <% if(series.programme.image){ %>
+            <img src="http://ichef.bbci.co.uk/images/ic/640x360/<%= series.programme.image.pid %>.jpg" class="img-responsive img-thumbnail top-image" />
+        <% } %>
+        <h2><%= series.programme.display_title.title %></h2>
+        <p><a class='upcoming-series' data-series-id="<%= series.programme.pid %>">All Upcoming Episodes</a></p>
+        <p><%= series.programme.medium_synopsis %></p>
+    </script>
+
+    <script type="text/x-underscore" id='favoritesButtonTemplate'>
+        <button type="button" class="btn btn-primary" id="add-to-favorites">Add To Favorites</button>
+    </script>
+
+    <script type="text/x-underscore" id='alreadyFavoriteButtonTemplate'>
+        <button type="button" class="btn btn-success">Already A Favorite</button>
+    </script>
+
+    <script type="text/x-underscore" id='newsTemplate'>
+        <h3>News</h3>
+        <ul class="nav-list" id="news">
+        <% _.each(news, function(link) { %>
+            <li data-link="<%= link.url %>">
+                <a><span class="lead"><%=link.title%></span></a>
+            </li>
+        <% }); %>
+        </ul>
+    </script>
+
+    <script type="text/x-underscore" id='extrasTemplate'>
+        <ul class="nav-list" id="extras">
+        <h3>Extras</h3>
+        <% _.each(extras, function(link) { %>
+            <li data-link="<%= link.link_uri %>">
+                <a><span class="lead"><%=link.title%></span></a><br />
+                <%=link.content%>
+            </li>
+        <% }); %>
+        </ul>
+    </script>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-12" id="page-content">
+
+            </div>
+        </div>
+    </div>
+
+	<script>
+        PAGE.initialize("series");
+    </script>
+</body>
+</html>
