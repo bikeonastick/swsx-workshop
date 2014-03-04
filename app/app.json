@@ -8,7 +8,7 @@
         {
           "name": "Upcoming",
           "page": "upcoming",
-          "iconText": "U",
+          "title": "Upcoming",
           "accessibilityLabel": "upcoming"
         },
         {
