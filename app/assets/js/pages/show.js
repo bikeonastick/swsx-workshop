@@ -26,7 +26,7 @@ var SHOW = {
 		var me = this;
 
 		var template = $("#showDetailsTemplate").html();
-		$("#page-content").append(_.template(template,{show:me.show}));
+		$("#page-content").html(_.template(template,{show:me.show}));
 	},
 
 	addBindings: function(){
@@ -35,6 +35,15 @@ var SHOW = {
 		$(".series-info").click(function(){
 			PAGE.openPage('Series','series',{'series_id': me.show.program.programme.programme.pid });
 		});
+
+		$("#twitter-share").click(function(){
+			PAGE.openDialogWithTitle('Twitter', 'twitter', {"text":"Be sure to watch " + me.show.title + " on " + displayDateTime(me.show.startdatetime) + ".  #bbc"});
+		});
+
+		$("#facebook-share").click(function(){
+			PAGE.openDialogWithTitle('Facebook', 'facebook', {});
+		});
+
 	}
 
 }
