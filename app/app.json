@@ -6,6 +6,12 @@
     "args": [
       [
         {
+          "name": "About",
+          "page": "about",
+          "title": "About",
+          "accessibilityLabel": "about"
+        },
+        {
           "name": "Hello",
           "page": "hello",
           "title": "Hello World",
