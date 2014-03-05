@@ -1033,12 +1033,6 @@ Clean Up
 	          "accessibilityLabel": "favorites"
 	        },
 	        {
-	          "name": "Hello",
-	          "page": "hello",
-	          "title": "Hello World",
-	          "accessibilityLabel": "hello"
-	        },
-	        {
 	          "name": "Support",
 	          "page": "email",
 	          "title": "Support",
