@@ -4,7 +4,7 @@
     "page": "appMenu",
     "accessibilityLabel": "menu",
     "args": [
-      [
+      [ 
         {
           "name": "Upcoming",
           "page": "upcoming",
@@ -16,6 +16,12 @@
           "page": "about",
           "title": "About",
           "accessibilityLabel": "about"
+        },
+        {
+          "name": "Favorites",
+          "page": "favorites",
+          "title": "Favorites",
+          "accessibilityLabel": "favorites"
         },
         {
           "name": "Hello",
