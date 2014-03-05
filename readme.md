@@ -22,7 +22,7 @@ Setting up for the workshop
 3. Open the ios-mysteries.xcworkspace in the ios-mysteries/ directory.
 4. Hit the **Play** button once XCode has finished loading.
 
-	You should see "Hello World" in the simulator.
+	You should see "Hello Roar" in the simulator.
 
 
 Adding an About page
@@ -126,9 +126,9 @@ Adding an About page
 	      ]
 	    ]
 
-8.  In XCode, under **Product**, hit the **Clean** option.  (This needs to be done after any change made within the app/ directory.)
+8. In XCode, under **Product**, hit the **Clean** option.  (This needs to be done after any change made within the app/ directory.)
 
-9.  Hit the **Play** button.  You should see the About page, and opening the menu should show you the About and Hello page links.
+9. Hit the **Play** button.  You should see the About page, and opening the menu should show you the About and Hello page links.
 
 To view the completed source for this step checkout step-1
 
@@ -141,6 +141,12 @@ Adding an Upcoming shows page
 
 		//  This will be called by the included PAGE.js as part of the liger initialization.
 		PAGE.upcoming = function(){
+			this.userCanRefresh = true;
+			this.setupRefresh();
+			UPCOMING.initialize();
+		}
+
+		PAGE.refresh = function(user){
 			UPCOMING.initialize();
 		}
 
@@ -152,6 +158,7 @@ Adding an Upcoming shows page
 			initialize: function(){
 				var me = this;
 
+				me.shows = [];
 				$.getJSON( "http://www.bbc.co.uk/tv/programmes/genres/drama/crime/schedules/upcoming.json", {}, UPCOMING.successfulFetch )
 				.fail(function( jqxhr, textStatus, error ) {
 					var err = textStatus + ", " + error;
@@ -182,7 +189,7 @@ Adding an Upcoming shows page
 				var me = this;
 
 				var template = $("#upcomingTemplate").html();
-				$("#page-content").append(_.template(template,{shows:me.shows}));
+				$("#page-content").html(_.template(template,{shows:me.shows}));
 			},
 
 			addBindings: function(){
@@ -249,13 +256,13 @@ Adding an Upcoming shows page
 		      {
 		        "name": "Upcoming",
 		        "page": "upcoming",
-		        "iconText": "U",
+		        "title": "Upcoming",
 		        "accessibilityLabel": "upcoming"
 		      },
 		      {
 		        "name": "About",
 		        "page": "about",
-		        "iconText": "A",
+		        "title": "About",
 		        "accessibilityLabel": "about"
 		      },
 		      {
@@ -267,7 +274,9 @@ Adding an Upcoming shows page
 		    ]
 		  ]
 		  
-5. In XCode **Clean** and **Run** the project.
+8. In XCode, under **Product**, hit the **Clean** option.
+
+9. Hit the **Play** button.
 
 6. To view the completed source for this step checkout step-2.
 
@@ -306,7 +315,7 @@ Adding an Show details page
 				var me = this;
 
 				var template = $("#showDetailsTemplate").html();
-				$("#page-content").append(_.template(template,{show:me.show}));
+				$("#page-content").html(_.template(template,{show:me.show}));
 			},
 
 			addBindings: function(){
@@ -315,6 +324,15 @@ Adding an Show details page
 				$(".series-info").click(function(){
 					PAGE.openPage('Series','series',{'series_id': me.show.program.programme.programme.pid });
 				});
+
+				$("#twitter-share").click(function(){
+					PAGE.openDialogWithTitle('Twitter', 'twitter', {"text":"Be sure to watch " + me.show.title + " on " + displayDateTime(me.show.startdatetime) + ".  #bbc"});
+				});
+
+				$("#facebook-share").click(function(){
+					PAGE.openDialogWithTitle('Facebook', 'facebook', {});
+				});
+
 			}
 
 		}
@@ -381,6 +399,8 @@ Adding an Show details page
 		        <p><%= show.program.short_synopsis %></p>
 		        <p>On <%= show.provider %>.</p>
 		        <p><%= displayDateTime(show.startdatetime) %></p>
+		        <p><button type="button" class="btn btn-primary" id="twitter-share">Share on Twitter</button></p>
+		        <p><button type="button" class="btn btn-primary" id="facebook-share">Share on Facebook</button></p>
 		    </script>
 
 		    <div class="container">
@@ -399,7 +419,9 @@ Adding an Show details page
 		</html>
 
 		
-5. In XCode **Clean** and **Run** the project.
+8. In XCode, under **Product**, hit the **Clean** option.
+
+9. Hit the **Play** button.
 
 6. To view the completed source for this step checkout step-3.
 
@@ -639,7 +661,9 @@ Adding an Series details page
 		</html>
 
 		
-5. In XCode **Clean** and **Run** the project.
+8. In XCode, under **Product**, hit the **Clean** option.
+
+9. Hit the **Play** button.
 
 6. To view the completed source for this step checkout step-4.
 
@@ -771,7 +795,9 @@ Adding an Upcoming Series page
 		</html>
 
 		
-5. In XCode **Clean** and **Run** the project.
+8. In XCode, under **Product**, hit the **Clean** option.
+
+9. Hit the **Play** button.
 
 6. To view the completed source for this step checkout step-5.
 
@@ -913,17 +939,75 @@ Adding an Favorites page
 	      ]
 	    ]
 		  
-5. In XCode **Clean** and **Run** the project.
+8. In XCode, under **Product**, hit the **Clean** option.
+
+9. Hit the **Play** button.
 
 6. To view the completed source for this step checkout step-6.
 
 		git checkout -f step-6
 
+Add a Support Link
+-----------------------------------
+
+1.  Append the Support link to the menu array in app.json
+
+		"accessibilityLabel": "menu",
+	    "args": [
+	      [ 
+	        {
+	          "name": "Upcoming",
+	          "page": "upcoming",
+	          "title": "Upcoming",
+	          "accessibilityLabel": "upcoming"
+	        },
+	        {
+	          "name": "About",
+	          "page": "about",
+	          "title": "About",
+	          "accessibilityLabel": "about"
+	        },
+	        {
+	          "name": "Favorites",
+	          "page": "favorites",
+	          "title": "Favorites",
+	          "accessibilityLabel": "favorites"
+	        },
+	        {
+	          "name": "Hello",
+	          "page": "hello",
+	          "title": "Hello World",
+	          "accessibilityLabel": "hello"
+	        },
+	        {
+	          "name": "Support",
+	          "page": "email",
+	          "title": "Support",
+	          "dialog": true,
+	          "args": {
+	            "toRecipients": "test@test.com",
+	            "ccRecipients": "", 
+	            "bccRecipients": "", 
+	            "subject": "I need help.", 
+	            "body": "I think I broke something", 
+	            "html": false
+	          }
+	        }
+	      ]
+	    ]
+
+8. In XCode, under **Product**, hit the **Clean** option.
+
+9. Hit the **Play** button.
+
+6. To view the completed source for this step checkout step-7.
+
+		git checkout -f step-7
 
 Clean Up
 -----------------------------------
 
-1. Remove hello.html, hello.js and helloSpec.js files.
+1. Remove hello.html and hello.js files.
 
 2. Remove Hello page from the menu array.
 
@@ -947,15 +1031,37 @@ Clean Up
 	          "page": "favorites",
 	          "title": "Favorites",
 	          "accessibilityLabel": "favorites"
+	        },
+	        {
+	          "name": "Hello",
+	          "page": "hello",
+	          "title": "Hello World",
+	          "accessibilityLabel": "hello"
+	        },
+	        {
+	          "name": "Support",
+	          "page": "email",
+	          "title": "Support",
+	          "dialog": true,
+	          "args": {
+	            "toRecipients": "test@test.com",
+	            "ccRecipients": "", 
+	            "bccRecipients": "", 
+	            "subject": "I need help.", 
+	            "body": "I think I broke something", 
+	            "html": false
+	          }
 	        }
 	      ]
 	    ]
 		  
-5. In XCode **Clean** and **Run** the project.
+8. In XCode, under **Product**, hit the **Clean** option.
 
-6. To view the completed source for this step checkout step-7.
+9. Hit the **Play** button.
 
-		git checkout -f step-7
+6. To view the completed source for this step checkout step-8.
+
+		git checkout -f step-8
 	
 
 	
