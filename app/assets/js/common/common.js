@@ -21,3 +21,25 @@ function displayDateTime(date){
 
     return displayDate(date) + " " + hours + ":" + ((date.getMinutes()<10?'0':'') + date.getMinutes()) + suffix;
 }
+
+function favoritesArray(){
+    if(!localStorage.favorites){
+        var favoritesList = [];
+        localStorage.favorites = JSON.stringify(favoritesList);
+    }
+
+    return JSON.parse(localStorage.favorites);
+}
+
+function inFavorites(id){
+    var favs = favoritesArray();
+
+    for(i = 0; i < favs.length; i++){
+        if(favs[i].hasOwnProperty(id)){
+            return true;
+        }
+    }
+
+    return false;
+
+}
