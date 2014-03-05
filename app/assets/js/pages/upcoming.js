@@ -1,5 +1,11 @@
 //  This will be called by the included PAGE.js as part of the liger initialization.
 PAGE.upcoming = function(){
+	this.userCanRefresh = true;
+	this.setupRefresh();
+	UPCOMING.initialize();
+}
+
+PAGE.refresh = function(user){
 	UPCOMING.initialize();
 }
 
@@ -11,6 +17,7 @@ var UPCOMING = {
 	initialize: function(){
 		var me = this;
 
+		me.shows = [];
 		$.getJSON( "http://www.bbc.co.uk/tv/programmes/genres/drama/crime/schedules/upcoming.json", {}, UPCOMING.successfulFetch )
 		.fail(function( jqxhr, textStatus, error ) {
 			var err = textStatus + ", " + error;
@@ -41,7 +48,7 @@ var UPCOMING = {
 		var me = this;
 
 		var template = $("#upcomingTemplate").html();
-		$("#page-content").append(_.template(template,{shows:me.shows}));
+		$("#page-content").html(_.template(template,{shows:me.shows}));
 	},
 
 	addBindings: function(){

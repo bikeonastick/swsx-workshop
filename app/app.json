@@ -8,7 +8,7 @@
         {
           "name": "Upcoming",
           "page": "upcoming",
-          "iconText": "U",
+          "title": "Upcoming",
           "accessibilityLabel": "upcoming"
         },
         {
@@ -22,6 +22,20 @@
           "page": "favorites",
           "title": "Favorites",
           "accessibilityLabel": "favorites"
+        },
+        {
+          "name": "Support",
+          "page": "email",
+          "title": "Support",
+          "dialog": true,
+          "args": {
+            "toRecipients": "test@test.com",
+            "ccRecipients": "", 
+            "bccRecipients": "", 
+            "subject": "I need help.", 
+            "body": "I think I broke something", 
+            "html": false
+          }
         }
       ]
     ]
