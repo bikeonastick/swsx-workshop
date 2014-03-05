@@ -28,6 +28,20 @@
           "page": "hello",
           "title": "Hello World",
           "accessibilityLabel": "hello"
+        },
+        {
+          "name": "Support",
+          "page": "email",
+          "title": "Support",
+          "dialog": true,
+          "args": {
+            "toRecipients": "test@test.com",
+            "ccRecipients": "", 
+            "bccRecipients": "", 
+            "subject": "I need help.", 
+            "body": "I think I broke something", 
+            "html": false
+          }
         }
       ]
     ]
