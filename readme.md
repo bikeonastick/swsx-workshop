@@ -251,28 +251,28 @@ Adding an Upcoming shows page
 		
 4. Prepend the Upcoming page to the menu array in app.json
 
-		"menu": [
-		    [
-		      {
-		        "name": "Upcoming",
-		        "page": "upcoming",
-		        "title": "Upcoming",
-		        "accessibilityLabel": "upcoming"
-		      },
-		      {
-		        "name": "About",
-		        "page": "about",
-		        "title": "About",
-		        "accessibilityLabel": "about"
-		      },
-		      {
-		        "name": "Hello",
-		        "page": "hello",
-		        "iconText": "H",
-		        "accessibilityLabel": "hello"
-		      }
-		    ]
-		  ]
+		"args": [
+	      [
+	        {
+	          "name": "Upcoming",
+	          "page": "upcoming",
+	          "title": "Upcoming",
+	          "accessibilityLabel": "upcoming"
+	        },
+	        {
+	          "name": "About",
+	          "page": "about",
+	          "title": "About",
+	          "accessibilityLabel": "about"
+	        },
+	        {
+	          "name": "Hello",
+	          "page": "hello",
+	          "title": "Hello World",
+	          "accessibilityLabel": "hello"
+	        }
+	      ]
+	    ]
 		  
 8. In XCode, under **Product**, hit the **Clean** option.
 
